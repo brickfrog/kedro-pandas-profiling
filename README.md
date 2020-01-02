@@ -27,7 +27,7 @@ you can append a name of a dataset to profile. This current interation only supp
 
 This is a sample output based on the company dataset from the Kedro pipeline tutorial.
 
-![Sample Output](/samples/sample.png)
+![Sample Output](https://github.com/BrickFrog/kedro-pandas-profiling/blob/master/samples/sample.PNG)
 
 ## What licence do you use?
 
