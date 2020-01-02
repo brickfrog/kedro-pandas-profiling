@@ -20,7 +20,7 @@ kedro profile -n -name of dataset-
 ```
 
 Kedro profile with no arguments returns the results of your catalog, and from that
-you can append a name of a dataset to profile. This current interation only supports
+you can append a name of a dataset to profile. This current iteration only supports
 .csv and .xlsx files.
 
 ### Sample Output:
