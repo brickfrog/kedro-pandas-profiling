@@ -33,11 +33,12 @@ setup(
     long_description_content_type="text/markdown",
     url="https://github.com/brickfrog/kedro-pandas-profiling",
     license="Apache Software License (Apache 2.0)",
-    python_requires=">=3.5, <3.8",
+    python_requires=">=3.6, <3.8",
     install_requires=requires,
     tests_require=test_requires,
     author="Justin Malloy",
     packages=["kedro_pandas_profiling"],
-    entry_points={"kedro.project_commands": ["profiling = kedro_pandas_profiling.plugin:commands"]},
-
+    entry_points={
+        "kedro.project_commands": ["profiling = kedro_pandas_profiling.plugin:commands"]
+    },
 )

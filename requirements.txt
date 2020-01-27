@@ -1,2 +1,3 @@
 kedro
+pandas
 pandas-profiling

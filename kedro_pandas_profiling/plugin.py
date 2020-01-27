@@ -5,23 +5,25 @@ import os
 import pandas as pd
 from pathlib import Path
 import pandas_profiling
-from typing import Union
-
-CONF_PATHS = ["conf/base", "conf/local"]
 
 
-def _get_catalog_details(path: Union[str, list]) -> pd.DataFrame:
+def kedro_conf_path() -> dict:
+    config = ConfigLoader(["conf/base", "conf/local"])
+    conf_catalog = config.get("catalog*", "catalog*/**")
+
+    return conf_catalog
+
+
+def get_catalog_details(conf_catalog) -> pd.DataFrame:
     """ Returns a DataFrame of the Kedro Catalog(s) """
-    conf_loader = ConfigLoader(path)
-    conf_catalog = conf_loader.get("catalog*", "catalog*/**")
     catalog_df = pd.DataFrame(conf_catalog).T
 
     return catalog_df
 
 
-def _pd_reader(filepath: Path) -> pd.DataFrame:
+def pd_reader(filepath: Path) -> pd.DataFrame:
     """ Helper Function for Reading Pandas DataFrames """
-    # TODO: I believe there's a way to handle this with Kedro proper, Refactor
+    # TODO: Inelegant, Refactor
 
     extension = filepath.suffix
 
@@ -54,14 +56,15 @@ def commands():
 )
 def profile(name):
     """ Kedro plugin for utilizing Pandas Profiling """
-    catalog_df = _get_catalog_details(CONF_PATHS)
+    conf_dict = kedro_conf_path()
+    catalog_df = get_catalog_details(conf_dict)
     project_path = get_project_context("project_path")
 
     if name == None:
         print(catalog_df)
     else:
         data_path = catalog_df.at[name, "filepath"]
-        data = _pd_reader(project_path / data_path)
+        data = pd_reader(project_path / data_path)
 
         print(f"Profiling {name} DataSet...")
 
