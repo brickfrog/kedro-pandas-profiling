@@ -25,7 +25,7 @@ setup(
     name=name,
     version=version,
     description="Kedro-Pandas-Profiling is a small Kedro plugin for profiling dataframes",
-    long_description="Kedro-Pandas-Profiling is a small Kedro plugin that provides a wrapper to Pandas Profiling, allowing data in the catalog to be quickly profiled",
+    long_description="Kedro-Pandas-Profiling is a small Kedro plugin that provides a wrapper to Pandas Profiling. This allows data in the catalog to be profiled, allowing better decisions to be made when building your Kedro pipeline.",
     url="https://github.com/brickfrog/kedro-pandas-profiling",
     license="Apache License 2.0",
     python_requires=">=3.6, <3.8",
