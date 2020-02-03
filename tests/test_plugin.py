@@ -63,9 +63,3 @@ def test_get_config_details(mock_config):
 
     assert x.equals(y)
 
-def test_pd_reader(mock_config):
-
-    config = kedro_conf(mock_config)
-
-    assert 0
-
