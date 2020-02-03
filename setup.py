@@ -19,20 +19,15 @@ with open("requirements.txt", "r", encoding="utf-8") as f:
 # get test dependencies and installs
 with open("test_requirements.txt", "r", encoding="utf-8") as f:
     test_requires = [x.strip() for x in f if x.strip() and not x.startswith("-r")]
-
-
-# Get the long description from the README file
-with open(path.join(here, "README.md"), encoding="utf-8") as f:
-    readme = f.read()
+   
 
 setup(
     name=name,
     version=version,
-    description="Kedro-Pandas-Profiling is a small plugin for profiling Pandas DataFrames in the Kedro Catalog",
-    long_description=readme,
-    long_description_content_type="text/markdown",
+    description="Kedro-Pandas-Profiling is a small Kedro plugin for profiling dataframes",
+    long_description="Kedro-Pandas-Profiling is a small Kedro plugin that provides a wrapper to Pandas Profiling, allowing data in the catalog to be quickly profiled",
     url="https://github.com/brickfrog/kedro-pandas-profiling",
-    license="Apache Software License (Apache 2.0)",
+    license="Apache License 2.0",
     python_requires=">=3.6, <3.8",
     install_requires=requires,
     tests_require=test_requires,
