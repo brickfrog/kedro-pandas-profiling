@@ -7,6 +7,8 @@ This is a Kedro plugin that uses [Pandas-Profiling](https://github.com/pandas-pr
 It can be installed via PyPI.
 
 ``` sh
+
+# TODO: Currently learning CI/CD with Azure, in PyPI test, otherwise install directly from git
 pip install kedro-pandas-profiling
 
 ```
