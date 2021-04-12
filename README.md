@@ -1,5 +1,7 @@
 # Kedro-Pandas-Profiling
 
+ARCHIVED: This was originally built before Kedro hooks were established, and I believe the functionality can (more easily) be added by just installing pandas-profiling and utilizing it with hooks against the necessary datasets, thus making an additional package a bit redundant.
+
 This is a Kedro plugin that uses [Pandas-Profiling](https://github.com/pandas-profiling/pandas-profiling) to profile datasets.
 
 ## Installation
