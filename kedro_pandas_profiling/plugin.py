@@ -1,5 +1,5 @@
 import click
-from kedro.cli import get_project_context
+from kedro.framework.cli import get_project_context
 from kedro.config import ConfigLoader
 import os
 import pandas as pd
@@ -58,7 +58,7 @@ def profile(name):
     """ Kedro plugin for utilizing Pandas Profiling """
     conf_dict = kedro_conf_path()
     catalog_df = get_catalog_details(conf_dict)
-    project_path = get_project_context("project_path")
+    project_path = get_project_context().project_path
 
     if name == None:
         print(catalog_df)
