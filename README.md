@@ -25,7 +25,7 @@ kedro profile #this returns the list of things in the catalog
 kedro profile -n #with the name of the dataset
 ```
 
-Kedro profile with no arguments returns the results of your catalog,
+Running `kedro profile` with no arguments returns the results of your catalog,
 and from that you can append a name of a dataset to profile. This 
 current iteration only supports .csv and .xlsx files.
 
